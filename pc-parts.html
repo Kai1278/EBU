@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Parts - Price4Byte</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.jpg" alt="Price4Byte Logo" class="logo-img">
+                        <span class="logo-text">Price<span>4Byte</span></span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="pc-parts.html" class="active">PC Parts</a>
+                    <a href="gears.html">Gears</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="search">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="#" class="wishlist"><i class="far fa-heart"></i></a>
+                        <a href="#" class="cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                        <a href="#" class="account"><i class="far fa-user"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pc-parts-page">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>PC Parts</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> / <span>PC Parts</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-grid">
+                    <!-- Filters Sidebar -->
+                    <aside class="filters-sidebar">
+                        <div class="filter-group">
+                            <h3>Categories</h3>
+                            <ul class="filter-list">
+                                <li><a href="pc-parts.html" class="active">All Components</a></li>
+                                <li><a href="pc-parts.html?category=processors">Processors</a></li>
+                                <li><a href="pc-parts.html?category=graphics-cards">Graphics Cards</a></li>
+                                <li><a href="pc-parts.html?category=motherboards">Motherboards</a></li>
+                                <li><a href="pc-parts.html?category=memory">Memory (RAM)</a></li>
+                                <li><a href="pc-parts.html?category=storage">Storage</a></li>
+                                <li><a href="pc-parts.html?category=power-supplies">Power Supplies</a></li>
+                                <li><a href="pc-parts.html?category=cases">Cases</a></li>
+                                <li><a href="pc-parts.html?category=cooling">Cooling</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3>Price Range</h3>
+                            <div class="price-range">
+                                <input type="range" id="priceRange" min="0" max="2000" step="10">
+                                <div class="price-inputs">
+                                    <input type="number" id="minPrice" placeholder="Min">
+                                    <span>-</span>
+                                    <input type="number" id="maxPrice" placeholder="Max">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3>Brands</h3>
+                            <ul class="filter-list">
+                                <li>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="brand" value="intel">
+                                        <span>Intel</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="brand" value="amd">
+                                        <span>AMD</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="brand" value="nvidia">
+                                        <span>NVIDIA</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="brand" value="asus">
+                                        <span>ASUS</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="brand" value="msi">
+                                        <span>MSI</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <!-- Products Grid -->
+                    <div class="products-content">
+                        <!-- Products Header -->
+                        <div class="products-header">
+                            <div class="products-found">
+                                <span>Showing 1-12 of 48 products</span>
+                            </div>
+                            <div class="products-sort">
+                                <select id="sortSelect">
+                                    <option value="featured">Featured</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="newest">Newest First</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Products List -->
+                        <div class="products-list">
+                            <!-- Product Card -->
+                            <div class="product-card">
+                                <div class="product-badge">New</div>
+                                <div class="product-image">
+                                    <img src="images/products/processor.jpg" alt="Intel Core i9">
+                                    <div class="product-actions">
+                                        <button class="action-btn wishlist"><i class="far fa-heart"></i></button>
+                                        <button class="action-btn quickview"><i class="far fa-eye"></i></button>
+                                        <button class="action-btn add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-category">Processors</div>
+                                    <h3 class="product-title">Intel Core i9-13900K</h3>
+                                    <div class="product-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(24)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price">$599.99</span>
+                                        <span class="original-price">$649.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- More product cards will be dynamically added here -->
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button class="page-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <span class="page-dots">...</span>
+                            <button class="page-btn">8</button>
+                            <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>About Price4Byte</h3>
+                    <p>Your ultimate destination for premium PC parts and gaming gear. Build your dream setup with us.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pc-parts.html">PC Parts</a></li>
+                        <li><a href="gears.html">Gears</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope"></i> info@price4byte.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, City</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Price4Byte. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
