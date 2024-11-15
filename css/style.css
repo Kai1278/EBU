@@ -999,3 +999,315 @@ body {
 .page-dots {
     color: var(--light-text);
 }
+
+/* PC Builder Page Styles */
+.pc-builder-page {
+    padding: 2rem 0;
+}
+
+.budget-selector {
+    background: var(--light-background);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.budget-options {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.budget-btn {
+    padding: 1rem 2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    background: white;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.budget-btn:hover,
+.budget-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.budget-btn.custom {
+    border-style: dashed;
+}
+
+.custom-budget-input {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.custom-budget-input input {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    width: 200px;
+}
+
+.custom-budget-input button {
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.build-preview {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.build-components {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.component-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.component-card:hover {
+    transform: translateY(-5px);
+}
+
+.component-image {
+    height: 200px;
+    background: var(--light-background);
+}
+
+.component-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.component-info {
+    padding: 1rem;
+}
+
+.component-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.component-info .price {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0.5rem 0 0;
+}
+
+.build-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.total-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.add-to-cart-btn {
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background: var(--secondary-color);
+}
+
+.performance-metrics {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.metric-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--light-background);
+    border-radius: 8px;
+}
+
+.metric-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.metric-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.5s ease;
+}
+
+/* Peripherals Section */
+.peripherals-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.peripherals-categories {
+    margin-bottom: 2rem;
+}
+
+.category-tabs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.category-tab {
+    padding: 0.5rem 1rem;
+    background: var(--secondary-bg);
+    border: none;
+    border-radius: 4px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-tab:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.category-tab.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.peripherals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.peripheral-card {
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.peripheral-card:hover {
+    transform: translateY(-5px);
+}
+
+.peripheral-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.peripheral-info {
+    flex: 1;
+}
+
+.peripheral-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.peripheral-price {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.peripherals-summary {
+    background: var(--secondary-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.selected-peripherals {
+    flex: 2;
+}
+
+.selected-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.selected-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: var(--card-bg);
+    border-radius: 4px;
+}
+
+.peripherals-total {
+    flex: 1;
+    text-align: right;
+}
+
+.total-price {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.grand-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}

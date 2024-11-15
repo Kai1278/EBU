@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Builder - Price4Byte</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.jpg" alt="Price4Byte Logo" class="logo-img">
+                        <span class="logo-text">Price<span>4Byte</span></span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="pc-parts.html">PC Parts</a>
+                    <a href="pc-builder.html" class="active">PC Builder</a>
+                    <a href="gears.html">Gears</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="search">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="#" class="wishlist"><i class="far fa-heart"></i></a>
+                        <a href="#" class="cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                        <a href="#" class="account"><i class="far fa-user"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pc-builder-page">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Custom PC Builder</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> / <span>PC Builder</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PC Builder Section -->
+        <section class="builder-section">
+            <div class="container">
+                <!-- Budget Selection -->
+                <div class="budget-selector">
+                    <h2>Select Your Budget</h2>
+                    <div class="budget-options">
+                        <button class="budget-btn" data-budget="budget">Budget ($500-$800)</button>
+                        <button class="budget-btn" data-budget="midrange">Mid-Range ($800-$1500)</button>
+                        <button class="budget-btn" data-budget="highend">High-End ($1500+)</button>
+                        <button class="budget-btn custom" data-budget="custom">Custom Budget</button>
+                    </div>
+                    <div class="custom-budget-input" style="display: none;">
+                        <input type="number" id="customBudget" placeholder="Enter your budget">
+                        <button id="applyBudget">Apply</button>
+                    </div>
+                </div>
+
+                <!-- Build Preview -->
+                <div class="build-preview">
+                    <h2>Recommended Build</h2>
+                    <div class="build-components">
+                        <!-- Components will be dynamically added here -->
+                    </div>
+                    <div class="build-summary">
+                        <div class="total-price">Total: $0</div>
+                        <button class="add-to-cart-btn">Add All to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Performance Metrics -->
+                <div class="performance-metrics">
+                    <h2>Expected Performance</h2>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <i class="fas fa-gamepad"></i>
+                            <h3>Gaming</h3>
+                            <div class="metric-bar">
+                                <div class="bar-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <i class="fas fa-video"></i>
+                            <h3>Content Creation</h3>
+                            <div class="metric-bar">
+                                <div class="bar-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <i class="fas fa-desktop"></i>
+                            <h3>Productivity</h3>
+                            <div class="metric-bar">
+                                <div class="bar-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Price4Byte is your one-stop shop for all PC components and gaming gear.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pc-parts.html">PC Parts</a></li>
+                        <li><a href="gears.html">Gears</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@price4byte.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/pc-builder.js"></script>
+</body>
+</html>
