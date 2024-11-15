@@ -151,6 +151,7 @@ const peripherals = {
 };
 
 let selectedPeripherals = new Map();
+let wishlistItems = new Map();
 let currentCategory = 'all';
 
 // Initialize the builder
@@ -236,7 +237,12 @@ function createPeripheralCard(item) {
         card.classList.add('selected');
     }
 
+    const isWishlisted = wishlistItems.has(item.id);
+    
     card.innerHTML = `
+        <div class="wishlist-icon ${isWishlisted ? 'active' : ''}" data-id="${item.id}">
+            <i class="fas fa-heart"></i>
+        </div>
         <img src="${item.image}" alt="${item.name}">
         <div class="peripheral-info">
             <h3>${item.name}</h3>
@@ -244,6 +250,13 @@ function createPeripheralCard(item) {
             <div class="peripheral-price">$${item.price.toFixed(2)}</div>
         </div>
     `;
+
+    // Add event listener for wishlist icon
+    const wishlistIcon = card.querySelector('.wishlist-icon');
+    wishlistIcon.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent card selection when clicking wishlist
+        toggleWishlist(item);
+    });
 
     card.addEventListener('click', () => togglePeripheral(item));
     return card;
@@ -284,6 +297,74 @@ function updatePeripheralsSummary() {
     const pcTotal = calculatePCTotal(); // Get the current PC build total
     grandTotalElement.textContent = `Grand Total (with PC): $${(totalPrice + pcTotal).toFixed(2)}`;
 }
+
+// Toggle wishlist status
+function toggleWishlist(item) {
+    if (wishlistItems.has(item.id)) {
+        wishlistItems.delete(item.id);
+    } else {
+        wishlistItems.set(item.id, item);
+    }
+    updateWishlistSection();
+    displayPeripherals(); // Refresh peripheral cards to update wishlist icons
+    
+    // Save wishlist to localStorage
+    saveWishlistToStorage();
+}
+
+// Update wishlist section
+function updateWishlistSection() {
+    const wishlistGrid = document.querySelector('.wishlist-grid');
+    wishlistGrid.innerHTML = '';
+
+    wishlistItems.forEach(item => {
+        const wishlistItem = document.createElement('div');
+        wishlistItem.className = 'wishlist-item';
+        wishlistItem.innerHTML = `
+            <div class="remove-wishlist" data-id="${item.id}">
+                <i class="fas fa-times"></i>
+            </div>
+            <img src="${item.image}" alt="${item.name}">
+            <div class="wishlist-item-info">
+                <h4>${item.name}</h4>
+                <div class="wishlist-item-price">$${item.price.toFixed(2)}</div>
+            </div>
+        `;
+
+        // Add event listener for remove button
+        const removeBtn = wishlistItem.querySelector('.remove-wishlist');
+        removeBtn.addEventListener('click', () => {
+            wishlistItems.delete(item.id);
+            updateWishlistSection();
+            displayPeripherals();
+            saveWishlistToStorage();
+        });
+
+        wishlistGrid.appendChild(wishlistItem);
+    });
+}
+
+// Save wishlist to localStorage
+function saveWishlistToStorage() {
+    const wishlistData = Array.from(wishlistItems.values());
+    localStorage.setItem('peripheralsWishlist', JSON.stringify(wishlistData));
+}
+
+// Load wishlist from localStorage
+function loadWishlistFromStorage() {
+    const savedWishlist = localStorage.getItem('peripheralsWishlist');
+    if (savedWishlist) {
+        const wishlistData = JSON.parse(savedWishlist);
+        wishlistItems = new Map(wishlistData.map(item => [item.id, item]));
+        updateWishlistSection();
+    }
+}
+
+// Initialize wishlist on page load
+window.addEventListener('load', () => {
+    loadWishlistFromStorage();
+    initPeripherals();
+});
 
 // Generate a PC build based on template
 function generateBuild(buildType) {

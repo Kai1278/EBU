@@ -6,7 +6,9 @@
     <title>PC Parts - Price4Byte</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="js/cart.js" defer></script>
+    <script src="js/pc-parts.js" defer></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -33,13 +35,26 @@
                     </div>
                     <div class="user-actions">
                         <a href="#" class="wishlist"><i class="far fa-heart"></i></a>
-                        <a href="#" class="cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                        <a href="cart.html" class="cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
                         <a href="#" class="account"><i class="far fa-user"></i></a>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
+
+    <!-- Toast Notifications -->
+    <div class="pc-builder-toast">
+        <i class="fas fa-check-circle"></i>
+        <span class="toast-message">Item added to PC Builder</span>
+        <a href="pc-builder.html" class="view-builder">View PC Builder</a>
+    </div>
+
+    <div class="cart-toast">
+        <i class="fas fa-check-circle"></i>
+        <span class="toast-message"></span>
+        <a href="cart.html" class="view-cart">View Cart</a>
+    </div>
 
     <main class="pc-parts-page">
         <!-- Page Header -->
@@ -142,6 +157,7 @@
                         <!-- Products List -->
                         <div class="products-list">
                             <!-- Product Card -->
+                            <!-- First product card -->
                             <div class="product-card">
                                 <div class="product-badge">New</div>
                                 <div class="product-image">
@@ -155,18 +171,35 @@
                                 <div class="product-info">
                                     <div class="product-category">Processors</div>
                                     <h3 class="product-title">Intel Core i9-13900K</h3>
-                                    <div class="product-rating">
-                                        <span class="stars">★★★★★</span>
-                                        <span class="rating-count">(24)</span>
-                                    </div>
                                     <div class="product-price">
                                         <span class="current-price">$599.99</span>
                                         <span class="original-price">$649.99</span>
                                     </div>
                                 </div>
                             </div>
-                            <!-- More product cards will be dynamically added here -->
-                        </div>
+                            
+                            <!-- Second product card -->
+                            <div class="product-card">
+                                <div class="pc-builder-mark" data-id="cpu1">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="product-image">
+                                    <img src="images/cpu.jpg" alt="CPU">
+                                    <div class="product-actions">
+                                        <button class="action-btn wishlist"><i class="far fa-heart"></i></button>
+                                        <button class="action-btn quickview"><i class="far fa-eye"></i></button>
+                                        <button class="action-btn add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-category">Processors</div>
+                                    <h3>Intel Core i7-12700K</h3>
+                                    <p>12 cores, up to 5.0 GHz</p>
+                                    <div class="product-price">
+                                        <span class="current-price">$399.99</span>
+                                    </div>
+                                </div>
+                            </div>
 
                         <!-- Pagination -->
                         <div class="pagination">

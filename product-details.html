@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Price4Byte</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="js/cart.js" defer></script>
+    <script src="js/product-details.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.jpg" alt="Price4Byte Logo" class="logo-img">
+                        <span class="logo-text">Price<span>4Byte</span></span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="pc-parts.html">PC Parts</a>
+                    <a href="pc-builder.html">PC Builder</a>
+                    <a href="gears.html">Gears</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="search">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="#" class="wishlist"><i class="far fa-heart"></i></a>
+                        <a href="cart.html" class="cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                        <a href="#" class="account"><i class="far fa-user"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Toast Notifications -->
+    <div class="cart-toast">
+        <i class="fas fa-check-circle"></i>
+        <span class="toast-message"></span>
+        <a href="cart.html" class="view-cart">View Cart</a>
+    </div>
+
+    <main class="product-details-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="pc-parts.html">PC Parts</a>
+                <i class="fas fa-chevron-right"></i>
+                <span class="product-name">Product Name</span>
+            </div>
+
+            <!-- Product Details Section -->
+            <section class="product-details">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="" alt="Product Image" id="main-product-image">
+                    </div>
+                    <div class="thumbnail-list">
+                        <!-- Thumbnails will be dynamically added here -->
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <div class="product-header">
+                        <h1 class="product-title"></h1>
+                        <div class="product-meta">
+                            <span class="sku">SKU: <span class="sku-value"></span></span>
+                            <span class="category">Category: <span class="category-value"></span></span>
+                        </div>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="current-price"></span>
+                        <span class="original-price"></span>
+                        <span class="discount-badge"></span>
+                    </div>
+
+                    <div class="product-stock">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="stock-status"></span>
+                    </div>
+
+                    <div class="product-actions">
+                        <div class="quantity-control">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                        <button class="add-to-wishlist-btn">
+                            <i class="far fa-heart"></i>
+                            Add to Wishlist
+                        </button>
+                    </div>
+
+                    <div class="product-description">
+                        <h2>Description</h2>
+                        <div class="description-content"></div>
+                    </div>
+
+                    <div class="product-specs">
+                        <h2>Specifications</h2>
+                        <table class="specs-table">
+                            <!-- Specifications will be dynamically added here -->
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Products Section -->
+            <section class="related-products">
+                <h2>Related Products</h2>
+                <div class="products-grid">
+                    <!-- Related products will be dynamically added here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Price4Byte</h3>
+                    <p>Your one-stop shop for all PC components and gaming gear. We provide the best prices and expert advice.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="pc-parts.html">PC Parts</a></li>
+                        <li><a href="pc-builder.html">PC Builder</a></li>
+                        <li><a href="gears.html">Gears</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: support@price4byte.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Price4Byte. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

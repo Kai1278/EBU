@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Price4Byte</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="js/cart.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.jpg" alt="Price4Byte Logo" class="logo-img">
+                        <span class="logo-text">Price<span>4Byte</span></span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="pc-parts.html">PC Parts</a>
+                    <a href="pc-builder.html">PC Builder</a>
+                    <a href="gears.html">Gears</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="search">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="#" class="wishlist"><i class="far fa-heart"></i></a>
+                        <a href="cart.html" class="cart active"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                        <a href="#" class="account"><i class="far fa-user"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <div class="container">
+            <h1>Shopping Cart</h1>
+            
+            <div class="cart-content">
+                <div class="cart-items">
+                    <!-- Cart items will be dynamically added here -->
+                </div>
+                
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-items">
+                        <div class="summary-item">
+                            <span>Subtotal</span>
+                            <span class="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Shipping</span>
+                            <span class="shipping">$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Tax</span>
+                            <span class="tax">$0.00</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total</span>
+                            <span class="total-amount">$0.00</span>
+                        </div>
+                    </div>
+                    <button class="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>Your cart is empty</h2>
+                <p>Browse our products and find something you like!</p>
+                <a href="pc-parts.html" class="continue-shopping">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Price4Byte is your one-stop shop for all PC components and gaming gear.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pc-parts.html">PC Parts</a></li>
+                        <li><a href="gears.html">Gears</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@price4byte.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Price4Byte. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

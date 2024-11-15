@@ -98,31 +98,26 @@ function getUrlParameter(name) {
     return params.get(name);
 }
 
-// Function to generate star rating HTML
-function generateStarRating(rating) {
-    return '★'.repeat(rating) + '☆'.repeat(5 - rating);
-}
-
 // Function to create a product card
 function createProductCard(product) {
     return `
-        <div class="product-card">
+        <div class="product-card" data-product-id="${product.id}">
             ${product.isNew ? '<div class="product-badge">New</div>' : ''}
             <div class="product-image">
-                <img src="${product.image}" alt="${product.name}">
+                <a href="product-details.html?id=${product.id}">
+                    <img src="${product.image}" alt="${product.name}">
+                </a>
                 <div class="product-actions">
                     <button class="action-btn wishlist"><i class="far fa-heart"></i></button>
                     <button class="action-btn quickview"><i class="far fa-eye"></i></button>
-                    <button class="action-btn add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                    <button class="action-btn add-to-cart" data-product-id="${product.id}"><i class="fas fa-shopping-cart"></i></button>
                 </div>
             </div>
             <div class="product-info">
                 <div class="product-category">${product.category}</div>
-                <h3 class="product-title">${product.name}</h3>
-                <div class="product-rating">
-                    <span class="stars">${generateStarRating(product.rating)}</span>
-                    <span class="rating-count">(${product.ratingCount})</span>
-                </div>
+                <h3 class="product-title">
+                    <a href="product-details.html?id=${product.id}">${product.name}</a>
+                </h3>
                 <div class="product-price">
                     <span class="current-price">$${product.price}</span>
                     ${product.originalPrice ? `<span class="original-price">$${product.originalPrice}</span>` : ''}
@@ -270,4 +265,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sortSelect) {
         sortSelect.addEventListener('change', updateProductList);
     }
+
+    // Add to cart functionality
+    document.addEventListener('click', (e) => {
+        const addToCartBtn = e.target.closest('.action-btn.add-to-cart');
+        if (addToCartBtn) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const productId = addToCartBtn.dataset.productId;
+            const productCard = document.querySelector(`.product-card[data-product-id="${productId}"]`);
+            
+            const product = {
+                id: productId,
+                name: productCard.querySelector('.product-title').textContent,
+                price: parseFloat(productCard.querySelector('.current-price').textContent.replace('$', '')),
+                image: productCard.querySelector('img').src,
+                category: productCard.querySelector('.product-category').textContent
+            };
+            
+            // Add the product to cart
+            cart.addItem(product);
+        }
+    });
 });
